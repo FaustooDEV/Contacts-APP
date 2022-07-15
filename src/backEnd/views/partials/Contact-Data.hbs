@@ -1,0 +1,18 @@
+<div class="Contact-Boxes">
+    {{#each contactsData}}
+    <div class="Contact-Box-Information">
+        <div class="Contact-Information">
+            <h3 style="font-size: 1.5em;"> {{firstName}} {{lastName}} </h3>
+            <span style="letter-spacing: 2px;"> {{phoneNumber}} </span>
+            <span> {{timeago createdAt}} </span>
+        </div>
+
+        <div class="Contact-Information-Button">
+            <button type="submit" id="Button-Edit"> <a href="/profile/edit/{{_id}}"> Edit Contact </a>
+            </button>
+            <button type="submit" id="Button-Delete"> <a href="/profile/delete/{{_id}}"> Delete Contact </a>
+            </button>
+        </div>
+    </div>
+    {{/each}}
+</div>

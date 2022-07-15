@@ -1,0 +1,431 @@
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');
+
+/*----------------------------General----------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+button {
+    font-weight: 600 !important;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: 'Fira Sans';
+    background-image: url("/images/Banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 94vh;
+}
+
+button {
+    border-style: none;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+/*----------------------------Nav----------------------------*/
+
+.nav {
+    height: 53px;
+    width: 100%;
+    background-color: #4d4d4d;
+    position: relative;
+    z-index: 100;
+  }
+  
+  .nav > .nav-header {
+    display: inline;
+  }
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .nav > .nav-btn {
+    display: none;
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .nav > .nav-links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  
+  @media (max-width:600px) {
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+  }
+
+/*----------------------------Home----------------------------*/
+
+.Home-Text {
+    color: #2E3440;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+header h1 {
+    font-size: 5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    animation: letters 1s normal;
+    letter-spacing: 2px;
+}
+
+header h3 {
+    opacity: normal;
+    animation: opacity-letters 1.2s normal;
+}
+
+header a {
+    line-height: 4px;
+    background-color: #3b5998;
+    border: #3b5998 2px solid;
+    color: #f1f1f1;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 8px;
+    position: relative;
+    top: 12px;
+    padding: 8px 6em;
+    transition: 0.2s ease-in;
+}
+
+header a:hover {
+    background: #f1f1f1;
+    border: #3b5998 2px solid;
+    color: #3b5998;
+}
+
+@keyframes letters {
+    from {
+          letter-spacing: 20px;
+    } to {
+        letter-spacing: 2px;
+    }
+}
+
+@keyframes opacity-letters {
+    from {
+       opacity: 0.3;
+    } to {
+         opacity: normal;
+    }
+}
+
+/*----------------------------Authentication----------------------------*/
+
+.Box {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+}
+
+.Authentication-Box {
+    background-color: white;
+    width: 30em;
+    border-radius: 12px;
+}
+
+.Authentication-Inputs {
+    background-color: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    color: #000;
+}
+
+.Authentication-Box input {
+    background: none;
+    border-style: none;
+    border-bottom: 3px solid #E5E9F0;
+    margin-top: 15px;
+    width: 400px;
+    height: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.Authentication-button {
+    background-color: #3b5998;
+    color: #f1f1f1;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-style: none;
+    border-radius: 8px;
+    margin-top: 3vh;
+}
+
+.Authentication-Message {
+    background-color: #f8d7da;
+    border: #f5c2c7 1px solid;
+    color: #842029;
+    padding: 8px;
+    display: block;
+    transition: 0.3s all;
+}
+
+.Authentication-Message h4 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.Authentication-Message i {
+    float: right;
+    cursor: pointer;
+    position: relative;
+    right: 25px;
+}
+
+
+
+/*----------------------------Contacts----------------------------*/
+
+.Contact-Presentation {
+    text-align: center;
+}
+
+.Contact-Presentation-Box {
+    width: 35em;
+    height: 145px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #2e3440cf;
+    border-radius: 10px;
+    color: #f1f1f1;
+    margin-top: 30px;
+}
+
+.Contact-Presentation  {
+     padding: 30px 0;
+}
+
+.Contact-Presentation button {
+    width: 12em;
+    height: 2.5em;
+    background-color: #3b5998;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-style: none;
+    border-radius: 8px;
+}
+
+.Contact-Boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 2em;
+    margin-top: 40px;
+}
+
+.Contact-Box-Information {
+    background-color: #2e3440cf;
+    color: #f1f1f1;
+    width: 16em;
+    height: 16em;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 30px; /* Check out these line */
+    margin: 30px 30px 0 0; /* Check out these line */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Contact-Information {
+    display: flex;
+    flex-direction: column;
+}
+
+.Contact-Information span {
+    margin-top: 2px;
+}
+
+.Contact-Information-Button button {
+    width: 9em;
+    height: 2.5em;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-style: none;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+#Button-Edit {
+    background-color: #198754;
+}
+
+#Button-Delete {
+    background-color: #dc3545;
+}
+
+@media (max-width:600px) {
+        .Contact-Presentation-Box {
+            max-width: 20em;
+            height: auto;
+        }
+}
+
+/*----------------------------Contacts Add----------------------------*/
+
+.Contact-Add-Box {
+    width: 30em;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #2e3440cf;
+    border-radius: 10px;
+    color: #f1f1f1;
+    margin-top: 30px;
+} 
+
+.Contact-Add {
+    padding: 30px 15px;
+}
+
+.Form-add {
+    display: grid;
+}
+
+.Form-add input {
+    padding: 12px 12px 6px 12px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.Contact-Button {
+    height: 2.5em;
+    background-color: #3b5998;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-style: none;
+    border-radius: 8px;
+    position: relative;
+    top: 12px;
+}
+
+.Contact-Message {
+    margin: 15px 50px;
+    background-color: #f8d7da;
+    border: #f5c2c7 1px solid;
+    color: #842029;
+    padding: 5px;
+    transition: 0.3s all;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Contact-Message h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+#hide-message {
+    cursor: pointer;
+    margin-right: 15px;
+}

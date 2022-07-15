@@ -1,0 +1,22 @@
+<div class="Box">
+    <div class="Authentication-Box" style="height: 24rem;">
+
+        {{#if AUTHENTICATION_MESSAGE}}
+        <div class="Authentication-Message">
+            <h4> {{AUTHENTICATION_MESSAGE}} <i class="fa-solid fa-xmark" id="hide-message"></i> </h4>
+        </div>
+        {{/if}}
+
+        <h1 style="position: relative; top: 25px; font-size: 3em; font-weight: 600; color: #2E3440"> Login </h1>
+
+        <form action="/authentication/login" method="POST">
+            <div class="Authentication-Inputs" style="height: 30vh">
+
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+
+                <button type="submit" class="Authentication-button" style="padding: 8px 10em;"> Login </button>
+            </div>
+        </form>
+    </div>
+</div>

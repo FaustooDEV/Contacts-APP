@@ -1,0 +1,21 @@
+<div class="Box">
+    <div class="Authentication-Box" style="height: 28rem;">
+
+        {{#if AUTHENTICATION_MESSAGE}}
+        <h4> {{AUTHENTICATION_MESSAGE}} </h4>
+        {{/if}}
+
+        <h1 style="position: relative; top: 25px; font-size: 3em; font-weight: 600; color: #2E3440"> Register </h1>
+
+        <form action="/authentication/register" method="POST">
+            <div class="Authentication-Inputs" style="height: 40vh;">
+
+                <input type="text" name="username" placeholder="Username">
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+
+                <button type="submit" class="Authentication-button" style="padding: 8px 9em;"> Register </button>
+            </div>
+        </form>
+    </div>
+</div>

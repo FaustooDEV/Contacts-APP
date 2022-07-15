@@ -1,0 +1,34 @@
+{{#if errors}}
+{{#each errors}}
+   <div class="Contact-Message">
+         <h4> {{msg}}  </h4>
+    <i class="fa-solid fa-xmark" id="hide-message" onclick="this.parentElement.style.display='none';"> </i>
+   </div>
+{{/each}}
+{{/if}}
+
+<div class="Contact-Add-Box">
+    <div class="Contact-Add">
+        <h2> Add a new contact {{username}} </h2>
+
+        {{#if add_Form}}
+
+        <form action="/profile/add" method="POST" class="Form-add">
+            <input type="text" name="firstName" placeholder="Write the first Name" value="{{#each previousDates}}{{firstName}}{{/each}}" required>
+            <input type="text" name="lastName" placeholder="Write the last Name" value="{{#each previousDates}}{{lastName}}{{/each}}" required>
+            <input type="number" name="phoneNumber" placeholder="Write the phone number" value="{{#each previousDates}}{{phoneNumber}}{{/each}}" required>
+
+            <button type="submit" class="Contact-Button"> Add the new contact </button>
+        </form>
+        {{else if edit_Form}}
+        <form action="/profile/edit/{{data._id}}" method="POST" class="Form-add">
+            <input type="text" name="firstName" value={{data.firstName}} required>
+            <input type="text" name="lastName" value={{data.lastName}} placeholder="Write the last Name" required>
+            <input type="number" name="phoneNumber" value={{data.phoneNumber}} placeholder="Write the phone number" required>
+
+            <button type="submit" class="Contact-Button"> Add the new contact </button>
+        </form>
+        {{/if}}
+
+    </div>
+</div>
